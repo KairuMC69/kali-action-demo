@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # cho phép chạy thủ công
+  workflow_dispatch:
 
 jobs:
   kali_job:
@@ -18,5 +18,5 @@ jobs:
       run: |
         echo "Cài đặt Kali Linux trên Docker container..."
         docker pull kalilinux/kali-rolling
-        docker run --rm -it kalilinux/kali-rolling /bin/bash -c "echo 'Hello from Kali!'"
+        docker run --rm kalilinux/kali-rolling /bin/bash -c "echo 'Hello from Kali!'"
         
